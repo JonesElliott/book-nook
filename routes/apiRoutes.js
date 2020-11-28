@@ -37,4 +37,17 @@ module.exports = function (app) {
       });
   });
 
+  // Retrieve all Books for specified user
+  app.delete("/api/books/:id", (req, res) => {
+    db.Book.deleteOne({ _id: req.params })
+      .then(dbBook => {
+        console.log(dbBook);
+        res.json(dbBook);
+      })
+      .catch(error => {
+        console.log(error);
+        res.json(error).code(404);
+      });
+  });
+
 };
