@@ -10,7 +10,6 @@ class Search extends React.Component {
     };
 
     componentDidMount() {
-        // this.searchBook();
         this.searchBook();
     }
 
@@ -29,7 +28,10 @@ class Search extends React.Component {
     searchBook = query => {
         console.log('searchBook Query:\n' + query);
         API.getBook(query)
-            .then(res => this.setState({ books: res.data.items.map(bookData => this.makeBook(bookData)) }))
+            .then(res => {
+                console.log(res.data);
+                this.setState({ books: res.data.items.map(bookData => this.makeBook(bookData)) })
+            })
             .catch(err => console.error(err));
     };
 
