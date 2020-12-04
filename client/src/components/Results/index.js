@@ -27,6 +27,7 @@ class Results extends Component {
     }
 
     render() {
+        console.log(this.state.savedBooks);
         return (
             <div>
                 {!this.props.books.length ? (
