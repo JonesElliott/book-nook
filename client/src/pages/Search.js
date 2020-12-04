@@ -10,10 +10,12 @@ class Search extends React.Component {
     };
 
     componentDidMount() {
+        // this.searchBook();
         this.searchBook();
     }
 
     makeBook = bookData => {
+        console.log('makeBook Book Data:\n' + bookData);
         return {
             _id: bookData.id,
             title: bookData.volumeInfo.title,
@@ -25,6 +27,7 @@ class Search extends React.Component {
     }
 
     searchBook = query => {
+        console.log('searchBook Query:\n' + query);
         API.getBook(query)
             .then(res => this.setState({ books: res.data.items.map(bookData => this.makeBook(bookData)) }))
             .catch(err => console.error(err));

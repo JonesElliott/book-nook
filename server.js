@@ -19,7 +19,12 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 // MonogDB connection
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks",  { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks", {
+  useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+});
 
 // We can hear you
 app.listen(PORT, () => {

@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NavBar from "./components/Navbar";
 import Header from "./components/Header";
-import Wrapper from "./components/Wrapper";
 
 import NoMatch from "./pages/NoMatch";
 import Search from "./pages/Search";
