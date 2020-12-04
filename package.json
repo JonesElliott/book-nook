@@ -5,6 +5,9 @@
   "main": "server.js",
   "proxy": "http://localhost:3000",
   "scripts": {
+    "client": "cd client && npm run start",
+    "install": "cd client && npm install",
+    
     "dev": "react-scripts start",
     "start": "serve -s build",
     "build": "react-scripts build",
